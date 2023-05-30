@@ -5,15 +5,16 @@ with open('reviews.txt', 'r') as f:
 	for line in f:
 		data.append(line)
 		count += 1      # count = count + 1
-		    # %用來求餘數，例如 7 % 3 = 1    15 % 5 = 0
-			
-
-		for w in line:          # 每則留言是line，留言中的每個字設定為w
-			word.append(w)	    # 把每個字w ，加入word清單
-			
+		if count % 1000 == 0:    # %用來求餘數，例如 7 % 3 = 1    15 % 5 = 0
+			print(len(data))
 print('檔案讀取完成，總共有', len(data), '筆資料')
-word_avg = len(word)  / len(data)   # word清單:所有留言的字，data清單:所有留言
-print('平均留言長度為', word_avg)
+
+sum_len = 0
+for d in data:
+	sum_len = sum_len + len(d)   # 求留言的總長度
+
+print('留言的平均長度為', sum_len/len(data))
+
 
 print('----------------------------------------')
 print('')
@@ -28,3 +29,4 @@ while True:
 		print('請輸入1-1000000範圍內整數')	
 		print('')
 		print('')
+ 
