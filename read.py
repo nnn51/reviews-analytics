@@ -10,8 +10,9 @@ with open('reviews.txt', 'r') as f:
 print('檔案讀取完成，總共有', len(data), '筆資料')
 
 sum_len = 0
-for d in data:
-	sum_len = sum_len + len(d)   # 求留言的總長度
+for d in data:  # d是每一筆留言  len(d) = 每一筆留言的長度
+	sum_len = sum_len + len(d)   
+	# 求留言的總長度:每一次讀取，把該次留言的長度，加上舊總數，成為新總數
 
 print('留言的平均長度為', sum_len/len(data))
 
