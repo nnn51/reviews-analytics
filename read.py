@@ -15,6 +15,12 @@ for d in data:  # d是每一筆留言  len(d) = 每一筆留言的長度
 
 print('留言的平均長度為', sum_len/len(data))
 
+new = []
+for d in data:  # 每個d是一則留言，data是裝著一百萬筆留言的清單
+	if len(d) < 100:
+		new.append(d)
+	# 如果d的長度小於100，就把d裝進new這個新清單中
+print('一共有', len(new), '筆留言長度小於100')		
 
 print('----------------------------------------')
 print('')
